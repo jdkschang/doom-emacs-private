@@ -27,7 +27,7 @@
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
-(add-hook 'prog-mode-hook #'golden-ratio-mode)
+;; (add-hook 'prog-mode-hook #'golden-ratio-mode)
 
 ;; emacs/term
 ;; set fish as my default shell
@@ -61,14 +61,16 @@
 	;; remove modeline in eshell buffers
 	(add-hook 'eshell-mode-hook #'hide-mode-line-mode))
 
+(after! helm
+	(map! :after helm-files
+				:map helm-find-files-map
+				"C-h" #'helm-find-files-up-one-level
+				"C-l" #'helm-ff-RET))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
 (load! "+magit")
 (load! "+theme")
 (load! "+macos")
-;; (load! "+ranger") ;; File manager stuff
-;; (load! "+tramp")
-																				; (load! "+reason") ;; ReasonML stuff
 (load! "+org") ;; Org mode stuff like todos and rebindings
 (load! "+bindings")
