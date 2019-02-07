@@ -16,7 +16,7 @@
 	 +someday (expand-file-name "someday.org" org-directory)
 	 +tickler (expand-file-name "tickler.org" org-directory)
 	 +ref (expand-file-name "reference.org" org-directory)
-	 +daypage-path (expand-file-name "days/" org-directory)
+	 ;; +daypage-path (expand-file-name "days/" org-directory)
 
 	 org-archive-location (concat (expand-file-name "archive.org" org-directory) "::* From %s")
 	 org-capture-templates '(("t" "Todo [inbox]" entry
@@ -87,21 +87,21 @@
 		'((transient))))
 
 
-;; (defun +jdkschang/org-agenda-skip-all-siblings-but-first ()
-;; 	"Skip all but the first non-done entry."
-;; 	(let (should-skip-entry)
-;; 		(unless (+jdkschang/org-current-is-todo)
-;; 			(setq should-skip-entry t))
-;; 		(save-excursion
-;; 			(while (and (not should-skip-entry) (org-goto-sibling t))
-;; 				(when (+jdkschang/org-current-is-todo)
-;; 					(setq should-skip-entry t))))
-;; 		(when should-skip-entry
-;; 			(or (outline-next-heading)
-;; 					(goto-char (point-max))))))
+(defun +jdkschang/org-agenda-skip-all-siblings-but-first ()
+	"Skip all but the first non-done entry."
+	(let (should-skip-entry)
+		(unless (+jdkschang/org-current-is-todo)
+			(setq should-skip-entry t))
+		(save-excursion
+			(while (and (not should-skip-entry) (org-goto-sibling t))
+				(when (+jdkschang/org-current-is-todo)
+					(setq should-skip-entry t))))
+		(when should-skip-entry
+			(or (outline-next-heading)
+					(goto-char (point-max))))))
 
-;; (defun +jdkschang/org-current-is-todo ()
-;; 	(string= "TODO" (org-get-todo-state)))
+(defun +jdkschang/org-current-is-todo ()
+	(string= "TODO" (org-get-todo-state)))
 
 (defun +open-inbox ()
 	(interactive)
