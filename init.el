@@ -52,7 +52,7 @@
        docker
        editorconfig
        ;; gist              ; interacting with github gists
-       ;; macos
+       macos
        magit
        password-store
        pdf
