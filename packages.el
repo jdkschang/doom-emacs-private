@@ -41,3 +41,7 @@
 
 ;; ui/indent-guides
 (package! highlight-indent-guides)
+
+;; `bin/doom patch-macos` should be used
+;; in conjunction with disabling `exec-path-from-shell`
+(disable-packages! exec-path-from-shell)

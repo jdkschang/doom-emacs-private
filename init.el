@@ -16,7 +16,7 @@
 
        :completion
        (company +auto)
-       (helm +fuzzy)
+       (ivy +fuzzy)
 
        :ui
        doom

@@ -31,21 +31,21 @@
 
 ;; emacs/term
 ;; set fish as my default shell
-;; (after! multi-term
-;; 	(setq multi-term-program "/usr/local/bin/fish"))
+(after! multi-term
+	(setq multi-term-program "/usr/local/bin/fish"))
 
 ;; lang/sh
 ;; setup flycheck-checkbashisms
 ;; flycheck checker for checking files beginning with #!/bin/sh
 ;; which also contain code exclusive to bash requires: checkbashism
-;; (def-package! flycheck-checkbashisms
-;;   :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
-;;   :after sh-mode
-;;   :hook (flycheck-mode . flycheck-checkbashisms-setup))
+(def-package! flycheck-checkbashisms
+  :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
+  :after sh-mode
+  :hook (flycheck-mode . flycheck-checkbashisms-setup))
 
 ;; Load snippets
-;; (after! yasnippet
-;; 	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+(after! yasnippet
+	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
 ;; ;; emacs/eshell
 (after! eshell
@@ -61,11 +61,11 @@
 	;; remove modeline in eshell buffers
 	(add-hook 'eshell-mode-hook #'hide-mode-line-mode))
 
-(after! helm
-	(map! :after helm-files
-				:map helm-find-files-map
-				"C-h" #'helm-find-files-up-one-level
-				"C-l" #'helm-ff-RET))
+;; (after! helm
+;; 	(map! :after helm-files
+;; 				:map helm-find-files-map
+;; 				"C-h" #'helm-find-files-up-one-level
+;; 				"C-l" #'helm-ff-RET))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
