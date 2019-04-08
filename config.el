@@ -39,9 +39,9 @@
 ;; flycheck checker for checking files beginning with #!/bin/sh
 ;; which also contain code exclusive to bash requires: checkbashism
 (def-package! flycheck-checkbashisms
-  :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
-  :after sh-mode
-  :hook (flycheck-mode . flycheck-checkbashisms-setup))
+	:when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
+	:after sh-mode
+	:hook (flycheck-mode . flycheck-checkbashisms-setup))
 
 ;; Load snippets
 (after! yasnippet

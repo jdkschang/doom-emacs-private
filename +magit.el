@@ -11,9 +11,6 @@
 				magit-commit-arguments '("--gpg-sign=703A05F567070F95")
 				magit-rebase-arguments '("--autostash" "--gpg-sign=703A05F567070F95")
 				magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=703A05F567070F95")
-				;; magit-commit-arguments '("--gpg-sign=D1BDD1F5AA60F93E")
-				;; magit-rebase-arguments '("--autostash" "--gpg-sign=D1BDD1F5AA60F93E")
-				;; magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=D1BDD1F5AA60F93E")
 				+magit-hub-features t ;; I want the PR/issue stuff too!
 				+magit-hub-enable-by-default t))  ;; And I want it on by default!
 

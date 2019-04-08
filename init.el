@@ -10,8 +10,6 @@
        (lookup +docsets)
        file-templates
        snippets
-       spellcheck
-       (syntax-checker +childframe)
        workspaces
 
        :completion
@@ -34,6 +32,7 @@
        window-select
 
        :editor
+       fold
        (format +onsave)
        multiple-cursors
        ;; parinfer
@@ -41,9 +40,7 @@
 
        :emacs
        (dired +ranger)
-       ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
-       hideshow          ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
        term              ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
@@ -51,6 +48,8 @@
        :tools
        docker
        editorconfig
+       flycheck
+       flyspell
        ;; gist              ; interacting with github gists
        macos
        magit
