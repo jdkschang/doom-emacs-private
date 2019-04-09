@@ -18,7 +18,7 @@
 
        :ui
        doom
-       doom-dashboard
+       ; doom-dashboard
        evil-goggles
        hl-todo
        modeline

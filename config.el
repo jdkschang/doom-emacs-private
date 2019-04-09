@@ -6,11 +6,12 @@
 
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
+(server-start)
 (setq-default user-full-name    "Dmitri Chang"
 							user-mail-address "jdkschang@protonmail.com"
 							fill-column 100
-							doom-leader-key "SPC"
-							doom-localleader-key ","
+							; doom-leader-key "SPC"
+							; doom-localleader-key ","
 
 							evil-shift-width 4
 							tab-width 4
