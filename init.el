@@ -1,8 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 ;; Copy me to ~/.doom.d/init.el or ~/.config/doom/init.el, then edit me!
 
-(setenv "SHELL" "/usr/local/bin/fish")
-(setq explicit-shell-file-name "/usr/local/bin/fish")
+;; (setenv "SHELL" "/usr/local/bin/fish")
+;; (setq explicit-shell-file-name "/usr/local/bin/fish")
 
 (doom! :feature
        eval
