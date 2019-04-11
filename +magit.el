@@ -8,13 +8,12 @@
 				magit-repository-directories '(("~/org/projects" . 3)
 																			 ("~/src" . 3)
 																			 ("~/.emacs.d"))
-				magit-commit-arguments '("--gpg-sign=809A1C18A92416A")
-				magit-rebase-arguments '("--autosquash" "--gpg-sign=809A1C18A92416A")
-				magit-pull-arguments   '("--rebase" "--gpg-sign=809A1C18A92416A")
+				magit-commit-arguments '("--gpg-sign=A3A9DC06A9B0856F")
+				magit-rebase-arguments '("--autosquash" "--gpg-sign=A3A9DC06A9B0856F")
+				magit-pull-arguments   '("--rebase" "--gpg-sign=A3A9DC06A9B0856F")
 				+magit-hub-features t ;; I want the PR/issue stuff too!
 				+magit-hub-enable-by-default t))  ;; And I want it on by default!
 
 (after! magithub
 	(setq magithub-preferred-remote-method 'git_url
-				;; magithub-clone-default-directory "~/Dropbox/org/projects" ;; I want my stuff to clone to ~/projects
 				magithub-clone-default-directory "~/src/github.com"))
