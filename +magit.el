@@ -1,16 +1,16 @@
 ;;; ~/dotfiles/dots/emacs/doom/+magit.el -*- lexical-binding: t; -*-
 
 (after! magit
-	(magit-todos-mode nil)
+	;; (magit-todos-mode nil)
 	(magit-define-popup-option 'magit-rebase-popup
 		?S "Sign using gpg" "--gpg-sign=" #'magit-read-gpg-secret-key)
 	(setq magit-save-repository-buffers nil
-				magit-repository-directories '(("~/Dropbox/org/projects" . 2)
+				magit-repository-directories '(("~/org/projects" . 3)
 																			 ("~/src" . 3)
 																			 ("~/.emacs.d"))
 				magit-commit-arguments '("--gpg-sign=703A05F567070F95")
-				magit-rebase-arguments '("--autostash" "--gpg-sign=703A05F567070F95")
-				magit-pull-arguments   '("--rebase" "--autostash" "--gpg-sign=703A05F567070F95")
+				magit-rebase-arguments '("--autosquash" "--gpg-sign=703A05F567070F95")
+				magit-pull-arguments   '("--rebase" "--gpg-sign=703A05F567070F95")
 				+magit-hub-features t ;; I want the PR/issue stuff too!
 				+magit-hub-enable-by-default t))  ;; And I want it on by default!
 

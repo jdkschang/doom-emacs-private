@@ -25,6 +25,8 @@
 ;; <gs SPC> works across all visible windows
 ;; useful for jumping around the screen
 (setq avy-all-windows t)
+;; (setenv "GPG_AGENT_INFO" nil)
+;; (setq epa-pinentry-mode 'loopback)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
