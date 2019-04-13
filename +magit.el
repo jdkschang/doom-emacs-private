@@ -8,9 +8,9 @@
 				magit-repository-directories '(("~/org/projects" . 3)
 																			 ("~/src" . 3)
 																			 ("~/.emacs.d"))
-				magit-commit-arguments '("--gpg-sign=A3A9DC06A9B0856F")
-				magit-rebase-arguments '("--autosquash" "--gpg-sign=A3A9DC06A9B0856F")
-				magit-pull-arguments   '("--rebase" "--gpg-sign=A3A9DC06A9B0856F")
+				transient-values '((magit-commit "--gpg-sign=A3A9DC06A9B0856F")
+													 (magit-rebase "--autosquash" "--gpg-sign=A3A9DC06A9B0856F")
+													 (magit-pull   "--rebase" "--gpg-sign=A3A9DC06A9B0856F"))
 				+magit-hub-features t ;; I want the PR/issue stuff too!
 				+magit-hub-enable-by-default t))  ;; And I want it on by default!
 

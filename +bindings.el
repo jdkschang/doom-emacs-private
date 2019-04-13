@@ -1,6 +1,7 @@
 ;;; ~/dotfiles/dots/emacs/doom/+bindings.el -*- lexical-binding: t; -*-
 
 (map!
+
  ;; toggle transparency
  :gnvime "s-u" #'+jdkschang/toggle-transparency
  ;; comments
@@ -8,6 +9,8 @@
  ;; easy movement
  :m "s-j" '+default:multi-next-line
  :m "s-k" '+default:multi-previous-line
+
+ :n "J" 'evil-join
 
  ;; window navigation
  :n "C-h" 'evil-window-left
@@ -46,7 +49,7 @@
 	 :desc "origami-recursively-toggle-node" :i "C-z" #'origami-recursively-toggle-node
 	 :desc "origami-toggle-node" :nv "z" #'origami-toggle-node
 	 :desc "origami-toggle-node" :i "C-Z" #'origami-toggle-node
-	 :desc "origami-show-only-node" :nv "A-z" #'origami-show-only-node)
+	 :desc "origami-show-only-node" :nv "s-z" #'origami-show-only-node)
  (:prefix "n"
 	 :desc "Browse project notes" :n "p" #'+jdkschang/find-notes-for-project)
  (:prefix "o"

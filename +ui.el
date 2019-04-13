@@ -21,10 +21,9 @@
 (set-frame-parameter nil 'alpha solid)
 
 ;; Font
-(setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 16)
-			doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 28)
-			;; doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic)
-			;; doom-unicode-font (font-spec :family "Operator Mono SSm Lig")
+(setq doom-font (font-spec :family "Operator Mono SSm Lig" :size 12)
+			doom-big-font (font-spec :family "Operator Mono SSm Lig" :size 19)
+			doom-variable-pitch-font (font-spec :family "Operator Mono SSm Lig" :slant 'italic :size 14)
 			display-line-numbers-type 'relative)
 
 (defun +jdkschang/italicize-comments ()
