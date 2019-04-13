@@ -39,7 +39,11 @@
 ;; <gs SPC> works across all visible windows
 ;; useful for jumping around the screen
 (setq avy-all-windows t)
+
+;; gpg security
 (setenv "GPG_AGENT_INFO" nil)
+;; (setq auth-sources
+;; 			'((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
