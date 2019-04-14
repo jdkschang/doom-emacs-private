@@ -12,6 +12,7 @@
 							user-mail-address "jdkschang@protonmail.com"
 							;; fill-column 100
 
+							doom-localleader-key ","
 							;; evil-shift-width 4
 							;; tab-width 4
 
