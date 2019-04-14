@@ -13,7 +13,7 @@
 
 			 :completion
 			 company
-			 ivy
+			 (ivy +fuzzy)
 			 ;; (company +auto)
 			 ;; (ivy +fuzzy)
 
@@ -58,7 +58,7 @@
 			 magit
 			 password-store
 			 pdf
-			 ; vterm
+			 vterm
 
 			 :lang
 			 (cc +lsp)                ; C/C++/Obj-C madness
