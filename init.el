@@ -1,8 +1,5 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
-;; (setenv "SHELL" "/usr/local/bin/fish")
-;; (setq explicit-shell-file-name "/usr/local/bin/fish")
-
 (doom! :feature
 			 eval
 			 (evil +everywhere)
@@ -12,10 +9,10 @@
 			 workspaces
 
 			 :completion
-			 company
+			 ;; company
+			 ;; ivy
+			 (company +auto)
 			 (ivy +fuzzy)
-			 ;; (company +auto)
-			 ;; (ivy +fuzzy)
 
 			 :ui
 			 doom
@@ -44,7 +41,7 @@
 			 electric          ; smarter, keyword-based electric-indent
 			 eshell
 			 imenu             ; an imenu sidebar and searchable code index
-			 ;; term              ; terminals in Emacs
+			 term              ; terminals in Emacs
 			 vc                ; version-control and Emacs, sitting in a tree
 
 			 :tools
@@ -58,7 +55,7 @@
 			 magit
 			 password-store
 			 pdf
-			 vterm
+			 ;; vterm
 
 			 :lang
 			 (cc +lsp)                ; C/C++/Obj-C madness

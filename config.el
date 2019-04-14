@@ -41,10 +41,32 @@
 (setq avy-all-windows t)
 
 ;; gpg security
-(setenv "GPG_AGENT_INFO" nil)
+;; (setenv "GPG_AGENT_INFO" nil)
 (setq auth-sources
 			'((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
+
+;; (defun +jdkschang/kludge-gpg-agent
+;; 		()
+;; 	(if
+;; 			(display-graphic-p)
+;; 			(setenv "DISPLAY" (terminal-name))
+;; 		(setenv "GPG_TTY" (terminal-name))
+;; 		(setenv "DISPLAY")))
+
+;; (add-hook 'window-configuration-change-hook '+jdkschang/kludge-gpg-agent)
+
+(defadvice epg--start (around advice-epg-disable-agent disable)
+	"Don't allow epg--start to use gpg-agent in plain text
+		terminals."
+	(if (display-graphic-p)
+			ad-do-it
+		(let ((agent (getenv "GPG_AGENT_INFO")))
+			(setenv "GPG_AGENT_INFO" nil) ; give us a usable text password prompt
+			ad-do-it
+			(setenv "GPG_AGENT_INFO" agent))))
+(ad-enable-advice 'epg--start 'around 'advice-epg-disable-agent)
+(ad-activate 'epg--start)
 
 (add-hook 'prog-mode-hook #'goto-address-mode) ;; Linkify links!
 (add-hook 'prog-mode-hook #'global-origami-mode)
@@ -52,8 +74,8 @@
 
 ;; emacs/term
 ;; set fish as my default shell
-(after! multi-term
-	(setq multi-term-program "/usr/local/bin/fish"))
+;; (after! multi-term
+;; 	(setq multi-term-program "/usr/local/bin/fish"))
 
 ;; lang/sh
 ;; setup flycheck-checkbashisms
