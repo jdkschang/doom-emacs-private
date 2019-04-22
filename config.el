@@ -9,26 +9,26 @@
 
 (server-start)
 (setq-default user-full-name    "Jonathan D. Chang"
-							user-mail-address "jdkschang@protonmail.com"
-							;; fill-column 100
+              user-mail-address "jdkschang@protonmail.com"
+              ;; fill-column 100
 
-							doom-localleader-key ","
-							;; evil-shift-width 4
-							;; tab-width 4
+              doom-localleader-key ","
+              ;; evil-shift-width 4
+              ;; tab-width 4
 
-							+workspaces-switch-project-function #'ignore
-							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
-							+format-on-save-enabled-modes '(not emacs-lisp-mode))
+              +workspaces-switch-project-function #'ignore
+              +pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
+              +format-on-save-enabled-modes '(not emacs-lisp-mode))
 
 ;;
 ;;; Host-specific config
 (pcase (system-name)
-	("kukan"
-	 ;; hlissner's swapped keys
-	 (setq x-super-keysym 'meta
-				 x-meta-keysm 'super))
-	("geesee"
-	 (font-put doom-font size: 14)))
+  ("kukan"
+   ;; hlissner's swapped keys
+   (setq x-super-keysym 'meta
+         x-meta-keysm 'super))
+  ("geesee"
+   (font-put doom-font size: 14)))
 
 ;; (when IS-LINUX
 ;; 	(font-put doom-font :weight 'semi-light))
@@ -44,18 +44,18 @@
 ;; gpg security
 ;; (setenv "GPG_AGENT_INFO" nil)
 (setq auth-sources
-			'((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
+      '((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
 
 (defadvice epg--start (around advice-epg-disable-agent disable)
-	"Don't allow epg--start to use gpg-agent in plain text
-		terminals."
-	(if (display-graphic-p)
-			ad-do-it
-		(let ((agent (getenv "GPG_AGENT_INFO")))
-			(setenv "GPG_AGENT_INFO" nil) ; give us a usable text password prompt
-			ad-do-it
-			(setenv "GPG_AGENT_INFO" agent))))
+  "Don't allow epg--start to use gpg-agent in plain text
+        terminals."
+  (if (display-graphic-p)
+      ad-do-it
+    (let ((agent (getenv "GPG_AGENT_INFO")))
+      (setenv "GPG_AGENT_INFO" nil) ; give us a usable text password prompt
+      ad-do-it
+      (setenv "GPG_AGENT_INFO" agent))))
 (ad-enable-advice 'epg--start 'around 'advice-epg-disable-agent)
 (ad-activate 'epg--start)
 
@@ -73,27 +73,27 @@
 ;; flycheck checker for checking files beginning with #!/bin/sh
 ;; which also contain code exclusive to bash requires: checkbashism
 (def-package! flycheck-checkbashisms
-	:when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
-	:after sh-mode
-	:hook (flycheck-mode . flycheck-checkbashisms-setup))
+  :when (and (featurep! :feature syntax-checker)(featurep! :lang sh))
+  :after sh-mode
+  :hook (flycheck-mode . flycheck-checkbashisms-setup))
 
 ;; Load snippets
 (after! yasnippet
-	(push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
+  (push (expand-file-name "snippets/" doom-private-dir) yas-snippet-dirs))
 
 ;; ;; emacs/eshell
 (after! eshell
-	(set-eshell-alias!
-	 "f"   "find-file $1"
-	 "l"   "ls -lh"
-	 "d"   "dired $1"
-	 "gl"  "(call-interactively 'magit-log-current)"
-	 "gs"  "magit-status"
-	 "gc"  "magit-commit"
-	 "rg"  "rg --color=always $*")
+  (set-eshell-alias!
+   "f"   "find-file $1"
+   "l"   "ls -lh"
+   "d"   "dired $1"
+   "gl"  "(call-interactively 'magit-log-current)"
+   "gs"  "magit-status"
+   "gc"  "magit-commit"
+   "rg"  "rg --color=always $*")
 
-	;; remove modeline in eshell buffers
-	(add-hook 'eshell-mode-hook #'hide-mode-line-mode))
+  ;; remove modeline in eshell buffers
+  (add-hook 'eshell-mode-hook #'hide-mode-line-mode))
 
 ;; Modules
 (load! "+ui") ;; My ui mods. Also contains ligature stuff.
