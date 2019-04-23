@@ -12,7 +12,8 @@
 			 ;; company
 			 ;; ivy
 			 (company +auto)
-			 (ivy +fuzzy)
+			 (helm +auto +fuzzy)
+			 ;; (ivy +fuzzy)
 
 			 :ui
 			 doom

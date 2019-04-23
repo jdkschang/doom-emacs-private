@@ -47,16 +47,6 @@
 			'((:source "~/org/projects/dotfiles/doom/.authinfo.gpg")))
 (setq epa-pinentry-mode 'loopback)
 
-;; (defun +jdkschang/kludge-gpg-agent
-;; 		()
-;; 	(if
-;; 			(display-graphic-p)
-;; 			(setenv "DISPLAY" (terminal-name))
-;; 		(setenv "GPG_TTY" (terminal-name))
-;; 		(setenv "DISPLAY")))
-
-;; (add-hook 'window-configuration-change-hook '+jdkschang/kludge-gpg-agent)
-
 (defadvice epg--start (around advice-epg-disable-agent disable)
 	"Don't allow epg--start to use gpg-agent in plain text
 		terminals."
