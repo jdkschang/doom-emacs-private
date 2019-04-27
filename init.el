@@ -1,12 +1,6 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
 (doom! :feature
-			 eval
-			 (evil +everywhere)
-			 (lookup +docsets)
-			 file-templates
-			 snippets
-			 workspaces
 
 			 :completion
 			 ;; company
@@ -18,10 +12,10 @@
 			 :ui
 			 doom
 			 doom-dashboard
-			 evil-goggles
 			 hl-todo
 			 modeline
 			 nav-flash
+			 ophints
 			 treemacs
 			 (popup +all +defaults)
 			 (pretty-code +fira)
@@ -29,9 +23,12 @@
 			 vc-gutter
 			 vi-tilde-fringe
 			 window-select
+			 workspaces
 
 			 :editor
+			 (evil +everywhere)
 			 fold
+			 file-templates
 			 (format +onsave)
 			 multiple-cursors
 			 ;; parinfer
@@ -48,14 +45,17 @@
 			 :tools
 			 docker
 			 editorconfig
+			 eval
 			 (flycheck +childframe)
 			 flyspell
 			 ;; gist              ; interacting with github gists
+			 (lookup +docsets)
 			 lsp
 			 macos
 			 magit
 			 password-store
 			 pdf
+			 snippets
 			 ;; vterm
 
 			 :lang
