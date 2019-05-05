@@ -20,6 +20,7 @@
 	(add-to-list 'default-frame-alist '(ns-appearance . dark)))
 ;; (add-hook 'window-setup-hook #'toggle-frame-maximized))
 
+
 																				; (help/on-mac-os
 																				;  (use-package exec-path-from-shell
 																				;   :ensure t

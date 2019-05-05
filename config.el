@@ -13,8 +13,8 @@
 							;; fill-column 100
 
 							doom-localleader-key ","
-							;; evil-shift-width 4
-							;; tab-width 4
+							evil-shift-width 4
+							tab-width 4
 
 							+workspaces-switch-project-function #'ignore
 							+pretty-code-enabled-modes '(emacs-lisp-mode org-mode)
@@ -23,18 +23,12 @@
 ;;
 ;;; Host-specific config
 (pcase (system-name)
-	("kukan"
+	;; ("kukan"
 	 ;; hlissner's swapped keys
-	 (setq x-super-keysym 'meta
-				 x-meta-keysm 'super))
+	 ;; (setq x-super-keysym 'meta
+	 ;; 			 x-meta-keysym 'super))
 	("geesee"
 	 (font-put doom-font size: 14)))
-
-;; (when IS-LINUX
-;; 	(font-put doom-font :weight 'semi-light))
-;; ;; (when IS-MAC
-;; 	(setq ns-use-thin-smoothing t)
-;; 	(add-hook 'window-setup-hook #'toggle-frame-maximized))
 
 
 ;; <gs SPC> works across all visible windows

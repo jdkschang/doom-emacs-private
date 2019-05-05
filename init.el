@@ -1,13 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
-(doom! :feature
-
-			 :completion
-			 ;; company
-			 ;; ivy
+(doom! :completion
 			 (company +auto)
-			 (helm +auto +fuzzy)
-			 ;; (ivy +fuzzy)
+			 (ivy +fuzzy)
 
 			 :ui
 			 doom
