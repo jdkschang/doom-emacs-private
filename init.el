@@ -11,7 +11,7 @@
        modeline
        nav-flash
        ophints
-       indent-guides
+       ;; indent-guides
        treemacs
        (popup +all +defaults)
        (pretty-code +fira)
