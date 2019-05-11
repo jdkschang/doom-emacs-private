@@ -12,15 +12,6 @@
 	(interactive)
 	(doom-project-browse (expand-file-name "~/org/projects/dotfiles")))
 
-;; (defun +jdkschang/find-notes-for-major-mode (&optional arg)
-;;   "TODO"
-;;   (interactive "P")
-;;   (let ((default-directory (expand-file-name "code/" +org-dir)))
-;;     (if arg
-;;         (call-interactively #'find-file)
-;;       (find-file
-;;        (expand-file-name (concat (string-remove-suffix "-mode" (symbol-name major-mode)) ".org"))))))
-
 ;;;###autoload
 (defun +jdkschang/find-notes-for-project (&optional arg)
 	"TODO"
